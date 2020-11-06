@@ -3,6 +3,6 @@
 echo
 echo "Cloning Application"
 
-rmdir .
+if [ -d . ]; then rm -Rf .; fi
 
 git clone "${GITHUB_URL:?}" .
