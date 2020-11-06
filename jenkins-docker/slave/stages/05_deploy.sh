@@ -8,4 +8,4 @@ registry=$(jq -r .archive.registry pipeline.json)
 repository=$(jq -r .archive.repository pipeline.json)
 image="${registry}/${repository}:latest"
 
-docker run -dp "${container_port}:${container_port}" "${image}"
+docker run -dp "${container_port}:8080" "${image}"
