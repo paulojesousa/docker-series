@@ -8,7 +8,6 @@ repository=$(jq -r .archive.repository pipeline.json)
 image="${registry}/${repository}:latest"
 
 docker login -u "${DOCKER_USERNAME?:}" \
-    -p "${DOCKER_PASSWORD?:}" \
-    "${registry}"
+    -p "${DOCKER_PASSWORD?:}" 
 docker build -t "${image}" .
 docker push "${image}"
