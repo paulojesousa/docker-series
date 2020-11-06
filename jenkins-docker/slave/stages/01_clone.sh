@@ -3,4 +3,7 @@
 echo
 echo "Cloning Application"
 
-rm -rf .* && git clone "${GITHUB_URL:?}" .
+if [ -d . ]; then rm -rf .* ; fi
+
+git clone "${GITHUB_URL:?}" .
+
